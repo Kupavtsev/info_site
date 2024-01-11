@@ -1,0 +1,49 @@
+version: '3.7'
+
+services:
+  django_gunicorn:
+    volumes:
+      - static:/static
+      - media:/static/media
+    env_file:
+      - .env
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks: 
+      - yntoil
+  nginx:
+    build: ./nginx
+    volumes:
+      - static:/static
+      - media:/static/media
+      - /etc/letsencrypt:/etc/letsencrypt/:ro
+      - /var/lib/letsencrypt:/var/lib/letsencrypt
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - django_gunicorn
+    networks: 
+      - yntoil
+  db:
+    image: postgres
+    volumes:
+      - postgres_yntoil:/var/lib/postgresql/data/
+    env_file:
+      - .env.db
+    networks: 
+      - yntoil
+
+volumes:
+  static:
+  media:
+  postgres_yntoil:
+
+
+networks: 
+    yntoil:
+        driver: bridge

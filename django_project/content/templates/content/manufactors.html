@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% load static %}
+
+
+{% block CSS %}
+    <link rel="stylesheet" type="text/css" href="{% static 'content/manufactors.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+    {% for man in manufactors %}
+    <div class="card" style="--cards:2">
+        <div class="child">
+          <h2>{{ man.brand_name }}</h2>
+          <p>Country of origin: <b>{{ man.location }}</b></p>
+        </div>
+        <div class="child"></div>
+        <div class="child"></div>
+      </div>
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}

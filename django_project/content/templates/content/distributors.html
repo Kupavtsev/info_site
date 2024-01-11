@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% load static %}
+
+
+{% block CSS %}
+    <link rel="stylesheet" type="text/css" href="{% static 'content/manufactors.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+    {% for distr in distributors %}
+    <div class="card" style="--cards:2">
+        <div class="child">
+          <h2>{{ distr.name }}</h2>
+          <p>Supplies:
+          {% for element in distr.manufactories.all %}
+           <b>{{ element.brand_name }}</b>
+          {% endfor %}
+        </p>
+        </div>
+        <div class="child"></div>
+        <div class="child"></div>
+      </div>
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}

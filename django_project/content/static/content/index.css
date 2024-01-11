@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css?family=Arbutus+Slab|Open+Sans&display=swap");
+/* CONTENT */
+
+
+.description_hide{
+    padding-bottom: 5%;
+}
+
+
+.spoiler {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+    padding-top: 5%;
+}
+
+.spoiler p {
+    text-indent: 20px;
+    line-height: 1.8em;
+  }
+
+.Articles {
+    display: flex;
+    flex-direction: row;
+    /* align-items: self-end; */
+    justify-content: right;
+    /* justify-content: space-around; */
+    flex-wrap: wrap;
+    max-width: 1600px;
+}
+.Articles h4 {
+    font-family: Arbutus Slab, serif;
+}
+
+/* .push {
+    margin-left: 10%;
+}
+
+.put {
+    margin-right: 12%;
+} */
+
+.one_article {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    width: 300px;
+    height: 260px;
+    margin-inline: 45px;
+    
+    --offset-multiplier: 4px;
+    transition: transform 0.6s ease;
+    --translate: 0;
+    transform: translate(var(--translate), var(--translate));
+    font-size: 80%;
+}
+.one_article:hover {
+    --offset-multiplier: 6px;
+    --translate: -1px;
+    transition: transform 0.3s ease;
+}
+
+.one_article a{
+    text-decoration: none;
+    /* padding-right: 25px; */
+}
+.one_article h4 {
+    color: black;
+}
+.one_article li{
+    color: brown;
+}
+
+.one_article a:visited{
+    color: LinkText;
+}
+
+.article_img {
+    width: 256px;
+    height: 160px;
+}
+
+.article_img hide{
+    width: 256px;
+    height: 160px;
+}
+
+.article_description {
+    width: 256px;
+    height: 164px;
+}
+
+.article_description hide{
+    width: 256px;
+    height: 160px;
+}
+
+
+
+.hide {
+    display: none;
+}
+/* .show {
+} */
+
+
+
+/* index.html */
+
+
+
+.Articles ul {
+    /* padding: 20px; */
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+}
+
+
+.Articles li {
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* flex-wrap: wrap; */
+    width: 256px;
+}
+
+.no_image {
+    width: 256px;
+    height: 160px;
+}
+
+
+li h4 {
+    text-align: center;
+}
+
+
+@media(max-width: 1300px) {
+    .one_article {
+        margin-inline: 10px;
+    }
+    
+}
+
+@media(max-width: 1080px) {
+    .one_article {
+        box-shadow: none;
+        margin-inline: 0;
+        padding: 0;
+    }
+    /* .one_article ul{
+        padding-inline-start: 0px;
+    } */
+    .Articles {
+        justify-content: last baseline;
+        margin-right: 25px;
+        /* padding-bottom: 5%; */
+    }
+}

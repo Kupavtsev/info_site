@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block CSS %}
+    <link rel="stylesheet" type="text/css" href="{% static 'content/menu_articles.css' %}">
+{% endblock %}
+
+{% block content %}
+
+
+
+{% if articles %}
+    <div class="articles_list">
+        {% for article in articles %}
+            <a href="{{ article.get_absolute_url }}"><div class="one_article">
+            
+                
+                {% if article.image %}
+                    <div class="image_article"><img class="article_img" src="{% static article.image %}"></div>
+                {% else %}
+                    <div class="no_image">There is no Image</div>
+                {% endif %}
+                <div class="title"><h4>{{ article.title }}</h4></div>
+                <div class="time">{{ article.timetoread }}</div>
+                <div class="keys">
+                    <ul>
+                    {% for topic in article.topics %}
+                            <li>{{ topic }}</li>
+                            {% endfor %}
+                        </ul>
+                </div>
+                <!-- <a href="{{ article.get_absolute_url }}"><div class="read">read</div></a> -->
+            </div></a>
+        {% endfor %}
+    </div>
+{% else %}
+    <div>There are no Articles</div>
+{% endif %}
+
+{% endblock %}

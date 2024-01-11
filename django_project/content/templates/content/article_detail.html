@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block CSS %}
+    <link rel="stylesheet" type="text/css" href="{% static 'content/articles.css' %}">
+{% endblock %}
+
+<title>{% block title %}{{ article.title }}{% endblock %}</title>
+
+{% block content %}
+
+<div class="article_detailed">
+    
+    <h2>{{ article.title }}</h2>
+    <br>
+    <h4>Description:</h4>
+    <div class="description_detail">
+        {{ article.description }}
+    </div>
+    <br>
+    <h4>Time of reading: {{article.timetoread}}</h4>
+    <div>
+        {{ article.content|safe }}
+    </div>
+    <br>
+    <div style="float: right;"><b>author:</b> {{ article.author.username }}</div>
+    <br><br><br><br>
+    <div hidden>
+        List of TAGS:
+        {% for element in article.tags.all %}
+            <b>#{{ element }}</b>
+        {% endfor %}
+    </div>
+    
+
+</div>
+
+
+{% endblock %}

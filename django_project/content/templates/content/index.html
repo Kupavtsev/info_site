@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block CSS %}
+    <link rel="stylesheet" type="text/css" href="{% static 'content/index.css' %}">
+{% endblock %}
+
+{% block content %}
+
+
+<div class="spoiler">
+<p>When it comes to keeping your vehicle's engine running smoothly, engine oil plays a vital role. But did you know that not all engine oils are created equal? Beyond the basic categories of oil, like synthetic or conventional, there's a world of additives and specifications that can significantly impact your engine's performance and longevity. In this guide, we'll dive into the fascinating realm of engine oil additives and specifications, shedding light on the secrets that make your engine purr.</p>
+
+</div>
+
+{% if articles %}
+
+<div class="description_hide">
+
+    <div class="Articles">
+        {% for article in articles %}
+            <ul class="one_article">
+            <a href="{{ article.get_absolute_url }}">
+                <li><h4>{{ article.title }}</h4></li>
+                {% if article.image %}
+                    <li ><img class="article_img" src="{% static article.image %}"></li>
+                {% else %}
+                    <div class="no_image">There is no Image</div>
+                {% endif %}
+                <li class="article_description hide">{{ article.description }}</li>
+            </a>
+            </ul>
+        {% endfor %}
+    </div>
+
+{% endif %}
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css?family=Arbutus+Slab|Open+Sans&display=swap");
+* a:link {text-decoration: none}
+
+.articles_list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+
+
+
+.one_article {
+    display: grid;
+    /* border: 3px solid #ccc; */
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    padding: 15px 10px;
+    margin-bottom: 45px;
+    grid-template-columns: 256px 60% 1fr;
+
+    --offset-multiplier: 4px;
+    transition: transform 0.6s ease;
+    --translate: 0;
+    transform: translate(var(--translate), var(--translate));
+
+    /* grid-template-rows: 160px 1fr 1fr; */
+    grid-template-areas:    "image_article title time"
+                            "image_article keys keys"
+}
+.one_article:hover {
+    --offset-multiplier: 6px;
+    --translate: -1px;
+    transition: transform 0.3s ease;
+}
+
+
+.articles_list a:visited {
+    color: LinkText;
+}
+
+/* .one_article li a{
+    text-decoration: none;
+} */
+
+.one_article > .image_article {
+    grid-area: image_article;
+}
+.one_article > .title {
+    grid-area: title;
+}
+.one_article > .time {
+    grid-area: time;
+}
+.one_article > .keys {
+    grid-area: keys;
+}
+.one_article > .read {
+    grid-area: read;
+}
+
+
+.title {
+    margin-left: 2%;
+    color: red;
+    /* font-family: 'Times New Roman', serif; */
+    font-family: Arbutus Slab, serif;
+}
+
+
+.keys {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 2%;
+    color: black;
+    font-family: Tahoma, sans-serif;
+    font-size: 90%;
+    /* justify-content: center; */
+}
+
+
+.time {
+    text-align: right;
+}
+.read {
+    text-align: right;
+    margin-top: 50px; 
+}
+
+/* Need to delete */
+
+.keys ul {
+    /* padding: 20px; */
+    /* list-style: none; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 60px;    
+    /* margin-bottom: 5%; */
+    /* justify-content: center; */
+}
+
+
+.keys li {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 260px;
+    font-size: 90%;
+    margin: 3px;
+    margin-left: 10%;
+}
+
+
+@media(max-width: 1100px) {
+    .keys {
+        font-family: none;
+    }
+    .keys ul{
+        padding: 0;
+    }
+}
+
+@media(max-width: 1060px) {
+    .keys {
+        font-family: none;
+        margin-left: 0;
+    }
+    .keys ul{
+        padding: 0;
+        font-size: 65%;
+    }
+}

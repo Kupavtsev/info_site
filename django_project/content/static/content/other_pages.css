@@ -1,0 +1,35 @@
+.about {
+    /* color: red; */
+    padding: 5%;
+}
+
+.contacts {
+    /* color: blue; */
+    padding: 5%;
+}
+
+.faq {
+    padding: 5%;
+    /* background-color: bisque; */
+}
+
+.disclaimer_article {
+    padding: 5%;
+}
+
+
+#manufactors {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 4vw;
+}
+
+#manufactors>div {
+    font-size: 2vw;
+    padding: .5em;
+    background: rgba(129, 123, 89, 0.342);
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}

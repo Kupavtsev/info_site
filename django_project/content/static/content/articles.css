@@ -1,0 +1,20 @@
+/* ONE ARTICLE */
+
+.article_detailed {
+    margin-right: 20%;
+    margin-left: 20%;
+    /* width: 196px; */
+    color: #374151;
+    font-size: 100%;
+    font-family: hurme_no2-webfont,-apple-system,BlinkMacSystemFont,sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+/* .description_detail {
+    color: #374151;
+    font-size: 100%;
+    font-family: hurme_no2-webfont,-apple-system,BlinkMacSystemFont,sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+} */

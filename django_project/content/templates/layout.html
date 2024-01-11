@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static 'content/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'content/buttons.css' %}">
+    {% block CSS %}
+    {% endblock %}
+    <title>{% block title %}Why Not Oil{% endblock %}</title>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K6FY56S2SR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K6FY56S2SR');
+</script>
+<!-- <main> -->
+
+<body>
+<header>
+    <div class="top_logo_login">
+        <div class="logo"><a href="{% url 'content:index' %}">Why Not Oil</a></div>
+        <a href="https://www.yntoil.com/admin" target="_blank"><button class="button-31" role="button">LOG IN</button></a>
+        {# <div class="login"><a href="#" >LOG IN</a></div> #}
+    </div>
+    <br>
+    <div class="menu_wrap">
+        <nav>
+            <ul>
+                <li><a href="{% url 'content:other_page' page='about' %}">About</a></li>
+                <li><a href="{% url 'content:articles_common' %}">Articles</a></li>
+                <!-- <li><a href="{% url 'content:articles_tech' %}">Tech Articles</a></li> -->
+                <li><a href="{% url 'content:manufactors' %}">Manufactors</a></li>
+                <li class="nav_last_li"><a href="{% url 'content:distributors' %}">Distributors</a></li>
+            </ul>
+
+        </nav>
+        <div class="search"></div>
+    </div>
+
+</header>
+
+
+    <main>
+    {% block content %}
+    
+    {% endblock %}
+    </main>
+
+
+   
+
+
+<footer id="pageFooter"> 
+
+    <div class="footer_data">
+            <ul class="column">
+                <li><a href="{% url 'content:other_page' page='about' %}">About</a></li>
+                <li><a href="{% url 'content:articles_common' %}">Articles</a></li>
+                <li><a href="{% url 'content:other_page' page='faq' %}">Why Not Oil FAQ</a></li>
+                <!-- <li><a href="{% url 'content:articles_tech' %}">Tech Articles</a></li> -->
+                <!-- <li>Independent researchers</li> -->
+                <!-- <li><a href="#">Mylis Articles</a></li> -->
+            </ul>
+            <ul class="column">
+                <li><a href="{% url 'content:manufactors' %}">Manufactures</a></li>
+                <li><a href="{% url 'content:distributors' %}">Distributors</a></li>
+                <li>Oil by Models</li>
+                <!-- <li>Maintenance Journal</li> -->
+            </ul>
+            <ul class="column">
+                <li class="social_follow">
+                    <a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABUElEQVRIid2UMUtCURTHf/ZE+gxFDjW05GQQ1DfIRZS0bxCuQrW2hRR+gYYKxM2I2ppbhNZCKHWstXAztMH74vA4z/OeTvWHA5dz/+f/P/fc+x78d6SAMtAEOsDARcflSo4zE4pAFxgb8QYU4gh7wHkE4WCcAQtRDGYR96NmiRcNgU/gENgGVoEMcB/g5MPEU0yf+QjYUeouA7xXQi6+bHT/GGjmADgGnhTunmbQNAwuBPfI4DZ8orz1rOYq8C7WGwZ3UzNYMopGYu0Z3GUtOUA/7qIh9qDUfPmb8gQfhlAY1pXcr1ZSJNvAmkIuAEPgBXh2uS0gzWRUK0pNW+tkn+kv40RwGwa35BPliFpAX3OOiS5woxkMgeqc4mOn8a0ZANwC9TkM6sCdRUqg/1GtO6i52sjIAb0IBj1gN46whMfkmV4BFZE/Ba7dnvVV/3H8AL5Yp2V2Od6XAAAAAElFTkSuQmCC"></a>
+                    <!-- <a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABBklEQVRIie2UOwoCMRCGP7fYRr2NlQg+WhXPoo0gdiLoObzAsmvr4zJqr7aiRUaQmMnG1dIfhg3z+P9JMln4oyAGwB64AvccuwI7oB9Kvggg1Wwe0nkR4jrQkHXvlTCyBIah27QQASVZj3yJF6XDBGgCZbEWkCq5Z5+Aq2DsyZ8oNcECifhjYAkcgQNmEGKJZd8INMXvmqyFxNrfCFTEf3TEThKr+gTsKfIJ27jJt+SIBQvU5LtyxFZWThDsrabijzFnfuD9kteOumCBO2YUNUyVGhXaQ8sw01IR6yid5z60nVL0iW18Av0fCHR9AmB+uUXJZ3nkT/SALfqdvNoFcyy5nf/hxAOtPNDaOIlp1gAAAABJRU5ErkJggg=="></a> -->
+                    <!-- <a href=""><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAB1UlEQVRIid3UT4jNURQH8M+Y3ht/wigpFpbsUDYWbCysyGOGZ22hLO0VZSGDTNmJnWZ2UlYWIqzEhuTxEJIyS/9KDBb3/OrOz33zHss5dbr3d+73fM+5557fYaFLE21MoYMvoZ2wHQzMf8kYXuF3H32J/f9CPIxzAxDX9SwWDRKgF/l73MctqUQlzEQ/8rGC0zQ2F7DrcRGzNXyrF3nT3Jr/wpE4a2AfTuIEdmEozlr4kfl19Xj4di2TybBvUC7JHawIzPHa2YFSgKkM8B2rMYIXYbuN6zWiK+G7VGrfyn61FOB5BrgbtkPxfS0ryb0M9y2SgJuZvVOR5m21Ntu/i3VTrNPhKAsES+Km8DGzrysFGM72o7HO1Egb2JLhZjPMKgXJA+QZbMdi3JA6ZGPYd2BZhnsS50PYmtk/lAI8yPYrcUxq26ehsK2WYNVpO80t8cPSbaoHrfQnTksdtSYL8ClsE5F5A49qvuOlAE289Xe/Vx0xKpVnRHpcWC51WI7vRtCilEbF5Thr4zGOxm1PSfOpjt/bi7ySyZpDNS4uFcjqeqYfOenhL2ROu6WyzAxAPtC4rqSFN9iDw/MQdw1Qll7SkP7U83iNr/iMZ9K8GTfPgy4M+QMbGcWLI2Le0QAAAABJRU5ErkJggg=="></a> -->
+                    <a href=""><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABHUlEQVRIie3UvyuFURzH8Re6RFcUo0z+ASPKYjBabCwyyt8gt5SZ0UYZbDZG8mORyaLuVQbJIDJQfl3D89xFz7nnuUy37qe+w9M55/3+PqdzDq00Y3pQQhnvqKTf3ejEDFZCizfQFYGfo5pRFTyn4qGsxW34wD56A4JSAF6rN2xhKdThYzqxjImM8XJEUMU2CiHB5q/JZ1jAiGSPPyPw73QnginiOEeXoXqpB4dVTOH0j4LrmGDnH91XsRsTFHHyD8FcTADtWBQ+76G6l9yTaPZwg9cGBct54DCAgwbhh+jIK6hlFOv4isCvMJgXWkj/YAxreMrReV9e+DQuI8Ba3WJeciDqJutaj2MWkxhGPx5whwvJY3gkeapbaYL8ALfBvYa/6cTcAAAAAElFTkSuQmCC"></a>
+                    <a href=""><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABgUlEQVRIid3UzUuUURQG8N9YpNlQ+EH0IS2EaBkpDAQtFFvoELlq0T8QboOyv6JFi2g5uxYtWqdj0KJQCiLLbUGOxoAQETEU1NTi3klnmHdmek1BHzi89557znnee+5zL/sV51HFIO7gVdpCXQn+tygjh4t48r8JfqMYCXJ4Fuef8QCn8R7nsIjr/0oAc8jjMA5gDFOYwXEM4xDO4GgagiJG8RSn8AXrcW2oRV7HBBv4gCVkGtYa56kI4Ge0TziGE9H/MX6zQptSE3zFdzzHS8yjgBUs4z5e40ebOruHPEqCTNNYSVBaIrZTvGarrQhqQQVcjna7oUAWa21I/iLpkK/iEnpxMyGmmjCuw8EEfz8G4t/ejeM3uBLXbwjtnMNEJHiIkcZC7WQKFUGq32zK8R7e4THOYhoLzZI7IWiGHmH3ZeEevJDQjaQWbUUGv9QfXkW44SdxQXgAjzRLbrWDnpg0ikfR140+zGIc1wRF3RIE0RY7fg+mYsB2ik92spO9gz8iJY+0kfzTMgAAAABJRU5ErkJggg=="></a>
+                    <a href=""><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAyklEQVRIie2VMQoCMRBFn6Ig9p5jbSzsLF0EryDiFaw8iFfyCjY2m+2sbG3WYuMSgxlMdhYL/TCQScK8mUlI4K9IrYASqBLNALkEMC2CP61wA/Y8QBVZcUhN3L6w6QJsgaMSFHgtde8kcSeuTY0GAmxH3c85MEzNuPMz8OWWeXgzP7F+DiyAETAFzgRalAoAGDvjdQgg3SJJM+AGbKx/Cm1MBWTUFySz/lUbEDxELcDH6hzw1bdIRT6gVIhppMWcdn9CASwVkvwlPQCEumB7eO9OdwAAAABJRU5ErkJggg=="></a>
+                    <!-- <a href=""><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABnElEQVRIie3UzYtOYRzG8Y95REreSvgDZkRNLCytpGhG1hQ2FiyU2GiaxkLZSCIsZjWl2SjFYppiQxZemmlkraZkFkp4mpKJOBbnd5pfjzkeM55suOquc+7fdX+vu/uN//pLWo0TmMQcBjsF7sE1NFGk9ulPoA0cxH18T9DHGIrv10sBr8NpTCfoZ9zCjvAcif67iwHvwkjAKvArnInQrCtRH2oHXYmjeJag3zCG/egKXz9upnGPwttXB96Cc5hJ4CaGsS35eiLsCdZEXxdmY8ymheBn8SWBp3Acq5JnPa6G72mCw9YY96Zu9u/D8BZ7W2oNnMS78DzH2hbP4ajdqwu4k2b/EdfRiz14mWoTft5cuBz183UBDRxTrmtR0yaVy7SQHoanvy4gqxc3WuCz2FDjX2b+Nm/+nYBKUylgPEAXcDG+K3WHZ2YxcBhIAYMYTf8jWB6+Q9pscJ2qmRXmT1BT+ZgVuI0VuKTNBv9KEylkGtuxW3nSCuWjVx2MA0sJ2BezfoCNqX+n8s5U4V9b6h1RN17gA051Gv6P6Acz8oT2Rq9XFwAAAABJRU5ErkJggg=="></a> -->
+                </li>
+                <li>Registration</li>
+                <!-- <li>Subscription</li> -->
+                <li><a href="{% url 'content:other_page' page='contacts' %}">Contacts</a></li>
+            </ul>
+    </div>
+
+    <div class="disclaimer ">
+        <div>© 2023 Why Not Oil Website. All rights reserved.</div>
+        <div><a href="{% url 'content:other_page' page='disclaimer' %}">Disclaimer</a></div>
+    </div>
+
+
+</footer>
+
+<!-- </main> -->
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    <!-- <script type="text/javascript" src="{% static 'js/forOneEl.js' %}"></script> -->
+    <!-- <script type="text/javascript" src="{% static 'js/forManyEls.js' %}"></script> -->
+</body>
+</html>
